@@ -1,3 +1,8 @@
+# create a flask server
+
+# two routes:  home and a route that can handle scraping function from step 1
+    # create button that links to route and display in page
+
 ## Step 2 - MongoDB and Flask Application
 # Use MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped 
 #   from the URLs above.
