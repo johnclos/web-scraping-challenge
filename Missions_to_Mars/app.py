@@ -6,6 +6,7 @@
 
 # import necessary libraries
 from flask import Flask, render_template
+from flask_pymongo import PyMongo
 import pymongo
 import scrape_mars
 

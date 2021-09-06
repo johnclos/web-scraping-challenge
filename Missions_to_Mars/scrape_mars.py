@@ -3,9 +3,9 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "metadata": {
-    "scrolled": true
-   },
+#    "metadata": {
+#     "scrolled": true
+#    },
    "outputs": [],
    "source": [
     "# dependencies BeautifulSoup, Pandas, and Requests/Splinter\n",
@@ -1124,13 +1124,13 @@
     "]\n"
    ]
   },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  }
+#   {
+#    "cell_type": "code",
+#    "execution_count": null,
+#    "metadata": {},
+#    "outputs": [],
+#    "source": []
+#   }
  ],
  "metadata": {
   "kernelspec": {
