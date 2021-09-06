@@ -1056,46 +1056,31 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 30,
    "metadata": {},
    "outputs": [
     {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "https://marshemispheres.com/cerberus.html\n",
-      "https://marshemispheres.com/cerberus.html\n",
-      "https://marshemispheres.com/schiaparelli.html\n",
-      "https://marshemispheres.com/schiaparelli.html\n",
-      "https://marshemispheres.com/syrtis.html\n",
-      "https://marshemispheres.com/syrtis.html\n",
-      "https://marshemispheres.com/valles.html\n",
-      "https://marshemispheres.com/valles.html\n",
-      "https://marshemispheres.com/#\n"
-     ]
-    },
-    {
      "data": {
       "text/plain": [
-       "[None,\n",
-       " <h3>Cerberus Hemisphere Enhanced</h3>,\n",
-       " None,\n",
-       " <h3>Schiaparelli Hemisphere Enhanced</h3>,\n",
-       " None,\n",
-       " <h3>Syrtis Major Hemisphere Enhanced</h3>,\n",
-       " None,\n",
-       " <h3>Valles Marineris Hemisphere Enhanced</h3>,\n",
-       " <h3>Back</h3>]"
+       "['https://marshemispheres.com/cerberus.html',\n",
+       " 'https://marshemispheres.com/cerberus.html',\n",
+       " 'https://marshemispheres.com/schiaparelli.html',\n",
+       " 'https://marshemispheres.com/schiaparelli.html',\n",
+       " 'https://marshemispheres.com/syrtis.html',\n",
+       " 'https://marshemispheres.com/syrtis.html',\n",
+       " 'https://marshemispheres.com/valles.html',\n",
+       " 'https://marshemispheres.com/valles.html',\n",
+       " 'https://marshemispheres.com/#']"
       ]
      },
-     "execution_count": 26,
+     "execution_count": 30,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
     "content_title_hemis_list = []\n",
-    "\n",
+    "hemis_image_url_list = []\n",
     "# Loop through returned results\n",
     "for result in hemis_url_list:\n",
     "    \n",
@@ -1107,15 +1092,14 @@
     "    hemis_image = soup_mars_hemis.find('a', class_='itemLink product-item')\n",
     "    href = result['href']\n",
     "    hemis_image_url = 'https://marshemispheres.com/' + href\n",
-    "    print(hemis_image_url)\n",
+    "#     print(hemis_image_url)\n",
     "    hemis_image_url_list.append(hemis_image_url)\n",
     "\n",
     "Not_none_values = filter(None.__ne__, content_title_hemis_list)\n",
     "\n",
     "content_title_hemis_listvalues = list(Not_none_values)\n",
     "\n",
-    "hemis_image_url_list\n",
-    "content_title_hemis_list"
+    "hemis_image_url_list\n"
    ]
   },
   {
