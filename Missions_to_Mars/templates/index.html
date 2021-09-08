@@ -24,8 +24,8 @@
             <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
         <h2>Latest Mars News</h2>
-        <h3>NASA's Mars Rover Drivers Need Your Help</h3>
-        <p>Using an online tool to label Martian terrain types, you can train an artifical intelligence algorithm that could improve the way engineers guide the Curiosity rover.</p>
+        <h3>{{ mars_data.news_title }}</h3>
+        <p>{{ mars_data.news_paragraph }}</p>
     </div
 
   <!-- container for featured Mars Image -->
@@ -36,7 +36,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12">
                 <div class="clear-fix">
                     <h2>Featured Mars Image</h2>
-                    <img src="Resources/assets/images/Fig1.png" alt="" id="description-image" width="160" height="110">
+                    <p>{{ mars_data.featured_image_url }}</p>
                 </div>
             </div>
 
@@ -46,8 +46,8 @@
                 <h3>Mars Facts</h3>
                     <div class="row justify-content-between">
                         <div class="col-md-5">
-                        <a href="Fig1.html" target="_blank">
-                            <img src=Resources/assets/images/Fig1.png width="160" height="110"></a>
+                        <p>{{ mars_data.facts | safe }}</p>
+                            <!-- <img src=Resources/assets/images/Fig1.png width="160" height="110"></a> -->
                         </div>
                     </div>
                 </div>
@@ -59,33 +59,14 @@
     <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="container">
             <h1>Mars Hemispheres</h1>
-            <div class="row justify-content-between">
-                <div class="col-md-2">
-                    <a href="Fig1.html" target="_blank">
-                        <img src=Resources/assets/images/Fig1.png width="160" height="110"></a>
-                </div>
-
-                <div class="col-md-1">&nbsp;</div>
-
-                <div class="col-md-2">
-                    <a href="Fig2.html" target="_blank">
-                        <img src=Resources/assets/images/Fig2.png width="160" height="110"></a>
-                </div>
-
-                <div class="col-md-1">&nbsp;</div>
-
-                <div class="col-md-2">
-                    <a href="Fig3.html" target="_blank">
-                        <img src=Resources/assets/images/Fig3.png width="160" height="110"></a>
-                </div>
-
-                <div class="col-md-1">&nbsp;</div>
-
-                <div class="col-md-2">
-                    <a href="Fig4.html" target="_blank">
-                        <img src=Resources/assets/images/Fig4.png width="160" height="110"></a>
-                </div>
+            {% for hemisphere in mars_data.hemisphere_image_urls %}
+            <div class="col-md-6">
+              <img src="{{hemisphere.img_url}}" alt="..." class="mw-100">
+              <div class="caption">
+                <h5>{{hemisphere.title}}</h5>
+              </div>
             </div>
+            {% endfor %}
         </div>
       </div>
 >
