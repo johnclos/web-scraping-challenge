@@ -16,14 +16,11 @@ def scrape_info():
 
 
     # ### NASA Mars News
-
-
     # Scrape the [Mars News Site](https://redplanetscience.com/) and collect the latest News Title and Paragraph Text.
         # Assign the text to variables that you can reference later.
     url_mars_news = 'https://redplanetscience.com/'
     browser.visit(url_mars_news)
     html_mars_news = browser.html
-
 
     # Use BeautifulSoup to help find and parse out the necessary data.  Use either html.parser or lxml parser.
     # Create a Beautiful Soup object
@@ -36,8 +33,8 @@ def scrape_info():
     data["news_title"] = content_title
     data["news_paragraph"] = article_teaser_body
 
-    # ### JPL Mars Space Images - Featured Image
 
+    # ### JPL Mars Space Images - Featured Image
     # Visit the url for the Featured Space Image site [here](https://spaceimages-mars.com).
     url_mars_imag = 'https://spaceimages-mars.com'
     browser.visit(url_mars_imag)
@@ -53,7 +50,6 @@ def scrape_info():
         # Example:
             # featured_image_url = 'https://spaceimages-mars.com/image/featured/mars2.jpg'
     featured_image = soup_mars_imag.find('a', class_='showimg fancybox-thumbs')
-    # featured_image = soup_mars_imag.select_one('a.showimg fancybox-thumbs')
 
     href = featured_image['href']
     featured_image_url = 'https://spaceimages-mars.com/' + href
@@ -62,7 +58,6 @@ def scrape_info():
 
 
     # ### Mars Facts
-
     # Visit the Mars Facts webpage [here](https://galaxyfacts-mars.com) and use Pandas to scrape the table containing
         # facts about the planet including Diameter, Mass, etc.
     url_mars_facts = 'https://galaxyfacts-mars.com'
@@ -79,15 +74,12 @@ def scrape_info():
     data["facts"] = html_mars_facts_html.to_html(index=False)
 
 
-
     # ### Mars Hemispheres
-
     # Visit the astrogeology site [here](https://marshemispheres.com/) to obtain high resolution images for each of 
         # Mars hemispheres.
     url_mars_hemis = 'https://marshemispheres.com/'
     browser.visit(url_mars_hemis)
     html_mars_hemis = browser.html
-
 
     # Use BeautifulSoup to help find and parse out the necessary data.  Use either html.parser or lxml parser.
     # Create a Beautiful Soup object
@@ -113,22 +105,7 @@ def scrape_info():
         # Finally, we navigate backwards
         browser.back()
 
-    data["hemisphere_image_urls"] =  hemisphere_image_urls  
-        
-    #     # Retrieve the title
-    #     content_title = result.find('h3')
-    #     content_title_hemis_list.append(content_title)
-        
-    #     # Retrieve the images of the hemisphers
-    #     hemis_image = soup_mars_hemis.find('a', class_='itemLink product-item')
-    #     href = result['href']
-    #     hemis_image_url = 'https://marshemispheres.com/' + href
-    # #     print(hemis_image_url)
-    #     hemis_image_url_list.append(hemis_image_url)
-
-    # Not_none_values = filter(None.__ne__, content_title_hemis_list)
-
-    # content_title_hemis_listvalues = list(Not_none_values)
+    data["hemisphere_image_urls"] =  hemisphere_image_urls
 
     browser.quit()
 
