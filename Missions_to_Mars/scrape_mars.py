@@ -70,7 +70,7 @@ def scrape_info():
     # Use Pandas to convert the data to a HTML table string.
     html_mars_facts_html = pd.read_html(url_mars_facts)[1]
 
-    html_mars_facts_html.columns = ["description", "value"]
+    html_mars_facts_html.columns = ["Description", "Value"]
     data["facts"] = html_mars_facts_html.to_html(index=False)
 
 

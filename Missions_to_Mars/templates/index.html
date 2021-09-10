@@ -45,9 +45,8 @@
                 <div class="container">
                 <h3>Mars Facts</h3>
                     <div class="row justify-content-between">
-                        <div class="col-md-5">
+                        <div class="col-md-12">
                         <p>{{ mars_data.facts | safe }}</p>
-                            <!-- <img src=Resources/assets/images/Fig1.png width="160" height="110"></a> -->
                         </div>
                     </div>
                 </div>
@@ -61,7 +60,7 @@
             <h1>Mars Hemispheres</h1>
             {% for hemisphere in mars_data.hemisphere_image_urls %}
             <div class="col-md-6">
-              <img src="{{hemisphere.img_url}}" alt="..." class="mw-100">
+              <img src="{{hemisphere.img_url}}" alt="..." class="mw-100" width="160" height="160">
               <div class="caption">
                 <h5>{{hemisphere.title}}</h5>
               </div>
